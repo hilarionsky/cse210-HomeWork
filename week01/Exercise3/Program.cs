@@ -35,7 +35,7 @@ class Program
             }
 
             Console.WriteLine($"It took you {guessCount} guesses.");
-
+          // Ask the user if they want to play again
             Console.Write("Do you want to play again (yes/no)? ");
             playAgain = Console.ReadLine();
             Console.WriteLine();
