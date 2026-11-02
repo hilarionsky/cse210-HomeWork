@@ -62,7 +62,7 @@ class Program
         }
 
     
-
+      // Sort the list in ascending order
         numbers.Sort();
 
         Console.WriteLine("The sorted list is:");
