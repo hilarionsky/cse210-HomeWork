@@ -1,0 +1,278 @@
+[33mcommit 80222845d2af2b409acf822a44393432b57cc44f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: hilarionsky <massiahisaac@gmail.com>
+Date:   Mon Nov 2 09:38:23 2026 +0100
+
+    Finished Exercise 1
+
+[1mdiff --git a/week01/Exercise1/Program.cs b/week01/Exercise1/Program.cs[m
+[1mindex d59c387..7fce4e4 100644[m
+[1m--- a/week01/Exercise1/Program.cs[m
+[1m+++ b/week01/Exercise1/Program.cs[m
+[36m@@ -4,6 +4,12 @@[m [mclass Program[m
+ {[m
+     static void Main(string[] args)[m
+     {[m
+[31m-        Console.WriteLine("Hello World! This is the Exercise1 Project.");[m
+[32m+[m[32m        Console.Write("What is your first name? ");[m
+[32m+[m[32m        string firstName = Console.ReadLine();[m
+[32m+[m
+[32m+[m[32m        Console.Write("What is your last name? ");[m
+[32m+[m[32m        string lastName = Console.ReadLine();[m
+[32m+[m
+[32m+[m[32m     Console.WriteLine($"Your name is {lastName}, {firstName}, {lastName}.");[m
+     }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/week01/Exercise2/Program.cs b/week01/Exercise2/Program.cs[m
+[1mindex 9524815..badd3a4 100644[m
+[1m--- a/week01/Exercise2/Program.cs[m
+[1m+++ b/week01/Exercise2/Program.cs[m
+[36m@@ -4,6 +4,66 @@[m [mclass Program[m
+ {[m
+     static void Main(string[] args)[m
+     {[m
+[31m-        Console.WriteLine("Hello World! This is the Exercise2 Project.");[m
+[32m+[m[32m    Console.Write("What is your grade percentage? ");[m
+[32m+[m[32m        string answer = Console.ReadLine();[m
+[32m+[m[32m        int percent = int.Parse(answer);[m
+[32m+[m
+[32m+[m[32m        string letter = "";[m
+[32m+[m
+[32m+[m[32m        if (percent >= 90)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            letter = "A";[m
+[32m+[m[32m        }[m
+[32m+[m[32m        else if (percent >= 80)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            letter = "B";[m
+[32m+[m[32m        }[m
+[32m+[m[32m        else if (percent >= 70)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            letter = "C";[m
+[32m+[m[32m        }[m
+[32m+[m[32m        else if (percent >= 60)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            letter = "D";[m
+[32m+[m[32m        }[m
+[32m+[m[32m        else[m
+[32m+[m[32m        {[m
+[32m+[m[32m            letter = "F";[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        string sign = "";[m
+[32m+[m[32m        int lastDigit = percent % 10;[m
+[32m+[m
+[32m+[m[32m        if (lastDigit >= 7)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            sign = "+";[m
+[32m+[m[32m        }[m
+[32m+[m[32m        else if (lastDigit < 3)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            sign = "-";[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        if (letter == "A" && sign == "+")[m
+[32m+[m[32m        {[m
+[32m+[m[32m            sign = "";[m
+[32m+[m[32m        }[m
+[32m+[m[32m        else if (letter == "F")[m
+[32m+[m[32m        {[m
+[32m+[m[32m            sign = "";[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        Console.WriteLine($"Your letter grade is: {letter}{sign}");[m
+[32m+[m
+[32m+[m[32m        if (percent >= 70)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            Console.WriteLine("Congratulations! You passed the class!");[m
+[32m+[m[32m        }[m
+[32m+[m[32m        else[m
+[32m+[m[32m        {[m
+[32m+[m[32m            Console.WriteLine("Sorry, you did not pass the class.");[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m
+     }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/week01/Exercise3/Program.cs b/week01/Exercise3/Program.cs[m
+[1mindex 76593db..8c6f977 100644[m
+[1m--- a/week01/Exercise3/Program.cs[m
+[1m+++ b/week01/Exercise3/Program.cs[m
+[36m@@ -4,6 +4,43 @@[m [mclass Program[m
+ {[m
+     static void Main(string[] args)[m
+     {[m
+[31m-        Console.WriteLine("Hello World! This is the Exercise3 Project.");[m
+[32m+[m[32m        string playAgain = "yes";[m
+[32m+[m
+[32m+[m[32m        while (playAgain.ToLower() == "yes")[m
+[32m+[m[32m        {[m
+[32m+[m[32m            Random randomGenerator = new Random();[m
+[32m+[m[32m            int magicNumber = randomGenerator.Next(1, 101);[m
+[32m+[m
+[32m+[m[32m            int guess = -1;[m
+[32m+[m[32m            int guessCount = 0;[m
+[32m+[m
+[32m+[m[32m            while (guess != magicNumber)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                Console.Write("What is your guess? ");[m
+[32m+[m[32m                guess = int.Parse(Console.ReadLine());[m
+[32m+[m[32m                guessCount++;[m
+[32m+[m
+[32m+[m[32m                if (magicNumber > guess)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    Console.WriteLine("Higher");[m
+[32m+[m[32m                }[m
+[32m+[m[32m                else if (magicNumber < guess)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    Console.WriteLine("Lower");[m
+[32m+[m[32m                }[m
+[32m+[m[32m                else[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    Console.WriteLine("You guessed it!");[m
+[32m+[m[32m                }[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            Console.WriteLine($"It took you {guessCount} guesses.");[m
+[32m+[m
+[32m+[m[32m            Console.Write("Do you want to play again (yes/no)? ");[m
+[32m+[m[32m            playAgain = Console.ReadLine();[m
+[32m+[m[32m            Console.WriteLine();[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        Console.WriteLine("Thank you for playing!");[m
+     }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/week01/Exercise4/Program.cs b/week01/Exercise4/Program.cs[m
+[1mindex c35ec67..5ed5936 100644[m
+[1m--- a/week01/Exercise4/Program.cs[m
+[1m+++ b/week01/Exercise4/Program.cs[m
+[36m@@ -1,9 +1,74 @@[m
+ using System;[m
+[32m+[m[32musing System.Collections.Generic;[m
+ [m
+ class Program[m
+ {[m
+     static void Main(string[] args)[m
+     {[m
+[31m-        Console.WriteLine("Hello World! This is the Exercise4 Project.");[m
+[32m+[m[32m        List<int> numbers = new List<int>();[m
+[32m+[m[32m        int userNumber = -1;[m
+[32m+[m
+[32m+[m[32m        Console.WriteLine("Enter a list of numbers, type 0 when finished.");[m
+[32m+[m
+[32m+[m[32m        while (userNumber != 0)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            Console.Write("Enter number: ");[m
+[32m+[m[32m            userNumber = int.Parse(Console.ReadLine());[m
+[32m+[m
+[32m+[m[32m            if (userNumber != 0)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                numbers.Add(userNumber);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        int sum = 0;[m
+[32m+[m[32m        int max = numbers[0];[m[41m [m
+[32m+[m
+[32m+[m[32m        foreach (int number in numbers)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            sum += number;[m
+[32m+[m[41m            [m
+[32m+[m[32m            if (number > max)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                max = number;[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        float average = (float)sum / numbers.Count;[m
+[32m+[m
+[32m+[m[32m        // Output Results[m
+[32m+[m[32m        Console.WriteLine($"The sum is: {sum}");[m
+[32m+[m[32m        Console.WriteLine($"The average is: {average}");[m
+[32m+[m[32m        Console.WriteLine($"The largest number is: {max}");[m
+[32m+[m
+[32m+[m[32m        int smallestPositive = numbers[0];[m
+[32m+[m
+[32m+[m[32m        foreach (int number in numbers)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            if (smallestPositive <= 0 && number > 0)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                smallestPositive = number;[m
+[32m+[m[32m            }[m
+[32m+[m[41m        [m
+[32m+[m
+[32m+[m[32m            else if (number > 0 && number < smallestPositive)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                smallestPositive = number;[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m        if (smallestPositive > 0)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            Console.WriteLine($"The smallest positive number is: {smallestPositive}");[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[41m    [m
+[32m+[m
+[32m+[m[32m        numbers.Sort();[m
+[32m+[m
+[32m+[m[32m        Console.WriteLine("The sorted list is:");[m
+[32m+[m[32m        foreach (int number in numbers)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            Console.WriteLine(number);[m
+[32m+[m[32m        }[m
+     }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/week01/Exercise5/Program.cs b/week01/Exercise5/Program.cs[m
+[1mindex c2ddca1..3cd49c0 100644[m
+[1m--- a/week01/Exercise5/Program.cs[m
+[1m+++ b/week01/Exercise5/Program.cs[m
+[36m@@ -4,6 +4,42 @@[m [mclass Program[m
+ {[m
+     static void Main(string[] args)[m
+     {[m
+[31m-        Console.WriteLine("Hello World! This is the Exercise5 Project.");[m
+[32m+[m[32m        DisplayWelcome();[m
+[32m+[m
+[32m+[m[32m        string userName = PromptUserName();[m
+[32m+[m
+[32m+[m[32m        int userNumber = PromptUserNumber();[m
+[32m+[m
+[32m+[m[32m        DisplayResult(userName, SquareNumber(userNumber));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    static void DisplayWelcome()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        Console.WriteLine("Welcome to the Program!");[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    static string PromptUserName()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        Console.Write("Please enter your name: ");[m
+[32m+[m[32m        string name = Console.ReadLine();[m
+[32m+[m[32m        return name;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    static int PromptUserNumber()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        Console.Write("Please enter your favorite number: ");[m
+[32m+[m[32m        int number = int.Parse(Console.ReadLine());[m
+[32m+[m[32m        return number;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    static int SquareNumber(int number)[m
+[32m+[m[32m    {[m
+[32m+[m[32m         return number * number;[m
+[32m+[m[41m        [m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    static void DisplayResult(string name, int squaredNumber)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        Console.WriteLine($"{name}, the square of your number is {squaredNumber}");[m
+     }[m
+ }[m
+\ No newline at end of file[m

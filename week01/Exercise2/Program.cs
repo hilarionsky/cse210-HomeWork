@@ -62,7 +62,7 @@ class Program
         {
             Console.WriteLine("Sorry, you did not pass the class.");
         }
-
+         // finished exercise2
 
 
     }
