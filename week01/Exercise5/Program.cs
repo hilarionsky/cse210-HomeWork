@@ -37,7 +37,7 @@ class Program
          return number * number;
         
     }
-
+    // This method displays the result to the user
     static void DisplayResult(string name, int squaredNumber)
     {
         Console.WriteLine($"{name}, the square of your number is {squaredNumber}");
