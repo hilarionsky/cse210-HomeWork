@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class PromptGenerator
 {
-    // Member variables (Attributes)
+    // Holds the collection of prompts
     public List<string> _prompts = new List<string>
     {
         "1.How was my yesterday?",
@@ -18,7 +18,7 @@ public class PromptGenerator
         "10.What was the most beautiful thing I saw today?",
     };
 
-    // Requires a return statement
+    //  Returns a random prompt from the list of prompts
     public string GetRandomPrompt()
     {
         Random randomGenerator = new Random();

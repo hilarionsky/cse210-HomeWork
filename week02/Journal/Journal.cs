@@ -34,7 +34,7 @@ public class Journal
         }
     }
 
-    // Loads entries into memory from a text file
+    //  Loads the entries from a text file using "|" separator
     public void LoadFromFile(string file)
     {
         _entries.Clear();

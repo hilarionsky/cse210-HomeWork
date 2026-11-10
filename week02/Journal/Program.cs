@@ -11,7 +11,7 @@ class Program
 
         Console.WriteLine("Welcome to the Journal Program!");
 
-        // Loop until the user chooses to quit
+        // Main loop for user interaction
         while (userChoice != "5")
         {
             Console.WriteLine("\nPlease select one of the following choices:");

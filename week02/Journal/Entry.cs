@@ -11,7 +11,7 @@ public class Entry
     public string _location;
     public string _mood;
 
-    // Print out a journal entry
+    // Displays the entry in a readable format
     public void Display()
     {
        Console.WriteLine($"Date: {_date} - prompt: {_promptText}");
