@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class PromptGenerator
 {
-    // Holds the collection of prompts
+    // List of prompts for the journal entries
     public List<string> _prompts = new List<string>
     {
         "1.How was my yesterday?",

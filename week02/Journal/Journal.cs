@@ -13,7 +13,7 @@ public class Journal
         _entries.Add(newEntry);
     }
 
-    // Prints every entry stored in memory
+    // Displays all entries in the journal
     public void DisplayAll()
     {
         foreach (Entry entry in _entries)

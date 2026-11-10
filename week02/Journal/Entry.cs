@@ -2,7 +2,7 @@ using System;
 
 public class Entry
 {
-    // Member variables (Attributes)
+    // Attributes for the journal entry
     public string _date;
     public string _promptText;
     public string _entryText;

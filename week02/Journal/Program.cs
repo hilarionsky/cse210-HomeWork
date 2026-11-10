@@ -1,3 +1,6 @@
+ // I added a new prompt to the list of prompts in the PromptGenerator class. 
+ // I also added location and mood attributes to the Entry class.
+
 using System;
 
 class Program
@@ -24,6 +27,7 @@ class Program
             
             userChoice = Console.ReadLine();
 
+          // Handle user choices
             if (userChoice == "1")
             {
                 Entry newEntry = new Entry();
